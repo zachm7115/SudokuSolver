@@ -1,21 +1,19 @@
+import java.util.ArrayList;
+
 public class Square {
     int defNumber, score;
-    int[] possibleNumbers;
-
+    ArrayList<Integer> possibleNumbers = new ArrayList<Integer>();
     public Square(int defNumber) {
 
         this.defNumber = defNumber;
 
     }
 
-    public Square(int[] possibleNumbers) {
-        possibleNumbers = new int[8];
+    public Square(ArrayList possibleNumbers) {
+        possibleNumbers = new ArrayList<Integer>;
+
         this.possibleNumbers = possibleNumbers;
     }
-
-
-
-
 
 
 
@@ -24,7 +22,7 @@ public class Square {
     }
 
 
-    public int[] getPossibleNumbers() {
+    public ArrayList<Integer> getPossibleNumbers() {
         return possibleNumbers;
     }
 }
