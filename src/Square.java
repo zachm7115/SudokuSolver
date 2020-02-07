@@ -14,11 +14,14 @@ public class Square {
     }
 
 
+
+
+
+
+
     public int getDefNumber(){
         return defNumber;
     }
-
-
 
 
     public int[] getPossibleNumbers() {
