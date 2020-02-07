@@ -12,4 +12,16 @@ public class Square {
         possibleNumbers = new int[8];
         this.possibleNumbers = possibleNumbers;
     }
+
+
+    public int getDefNumber(){
+        return defNumber;
+    }
+
+
+
+
+    public int[] getPossibleNumbers() {
+        return possibleNumbers;
+    }
 }
