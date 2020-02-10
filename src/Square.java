@@ -10,7 +10,7 @@ public class Square {
 
     public Square(ArrayList possibleNumbers) {
         possibleNumbers = new ArrayList<Integer>;
-        defNumber = -1;
+        this.defNumber = -1;
         this.possibleNumbers = possibleNumbers;
         int score = -1;
     }
