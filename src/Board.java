@@ -28,6 +28,8 @@ public class Board {
     public ArrayList<Integer> getPossibles(int r, int c){
         ArrayList<Integer> possibles = new ArrayList<>();
 
+
+
         return possibles;
     }
 
@@ -56,7 +58,7 @@ public class Board {
         int col = (c % 3)*3;
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-                if(squares[row + i][col + j].getDefNumber() != -1)
+                if (squares[row + i][col + j].getDefNumber() != -1)
                     nums.add(squares[row + 1][col + j].getDefNumber());
             }
         }
