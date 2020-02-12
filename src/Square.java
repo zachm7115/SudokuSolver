@@ -4,10 +4,9 @@ public class Square {
     int defNumber, score;
     ArrayList<Integer> possibleNumbers = new ArrayList<Integer>();
     int x,y;
-    public Square(int defNumber, int x, int y) {
+
+    public Square(int defNumber) {
         this.defNumber = defNumber;
-        this.x = x;
-        this.y = y;
 
     }
 
