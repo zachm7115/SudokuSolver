@@ -28,7 +28,39 @@ public class Board {
     public ArrayList<Integer> getPossibles(int r, int c){
         ArrayList<Integer> possibles = new ArrayList<>();
 
+        for (int i = 1; i < 10; i++) {
+            possibles.add(i);
+        }
 
+        ArrayList<Integer> sectionNums;
+        ArrayList<Integer> rowNums;
+        ArrayList<Integer> colNums;
+
+        sectionNums = getNumsInSection(r, c);
+        rowNums = getNumsInRow(r, c);
+        colNums = getNumsInCol(r, c);
+
+        for (int i = 0; i < sectionNums.size(); i++) { //removes numbers we know are not possible
+            for (int j = 0; j < possibles.size(); j++) {
+                if(sectionNums.get(i) == possibles.get(j)){
+                    possibles.remove(j);
+                }
+            }
+        }
+        for (int i = 0; i < rowNums.size(); i++) {
+            for (int j = 0; j < possibles.size(); j++) {
+                if(rowNums.get(i) == possibles.get(j)){
+                    possibles.remove(j);
+                }
+            }
+        }
+        for (int i = 0; i < colNums.size(); i++) {
+            for (int j = 0; j < possibles.size(); j++) {
+                if(colNums.get(i) == possibles.get(j)){
+                    possibles.remove(j);
+                }
+            }
+        }
 
         return possibles;
     }
@@ -64,5 +96,19 @@ public class Board {
         }
 
         return nums;
+    }
+
+    public boolean solveDefs(){ //solves all squares with one solution
+
+        boolean solved = false;
+
+        for (int r = 0; r < squares.length; r++) {
+            for (int c = 0; c < squares.length; c++) {
+                if(squares[r][c].possibleNumbers.size() < 2)
+                    squares[r][c] = new Square(squares[r][c].possibleNumbers.get(0));
+            }
+        }
+
+        return solved;
     }
 }
