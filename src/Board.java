@@ -37,8 +37,8 @@ public class Board {
         ArrayList<Integer> colNums;
 
         sectionNums = getNumsInSection(r, c);
-        rowNums = getNumsInRow(r, c);
-        colNums = getNumsInCol(r, c);
+        rowNums = getNumsInRow(r);
+        colNums = getNumsInColumn(c);
 
         for (int i = 0; i < sectionNums.size(); i++) { //removes numbers we know are not possible
             for (int j = 0; j < possibles.size(); j++) {
@@ -98,17 +98,30 @@ public class Board {
         return nums;
     }
 
-    public boolean solveDefs(){ //solves all squares with one solution
+    public ArrayList<Integer> getNumsInRow(int r){
+        ArrayList<Integer> rowdefnums = new ArrayList<>();
 
-        boolean solved = false;
-
-        for (int r = 0; r < squares.length; r++) {
-            for (int c = 0; c < squares.length; c++) {
-                if(squares[r][c].possibleNumbers.size() < 2)
-                    squares[r][c] = new Square(squares[r][c].possibleNumbers.get(0));
+        for (int i = 0; i < 8; i++) {
+            if (squares[r][i].getDefNumber() > -1){
+                rowdefnums.add(squares[r][i].getDefNumber());
             }
         }
 
-        return solved;
+
+        return rowdefnums;
     }
+
+    public ArrayList<Integer> getNumsInColumn(int c){
+        ArrayList<Integer> coldefnums = new ArrayList<>();
+
+        for (int i = 0; i < 8; i++) {
+            if (squares[i][c].getDefNumber() > -1){
+                coldefnums.add(squares[i][c].getDefNumber());
+            }
+        }
+
+
+        return coldefnums;
+    }
+
 }
