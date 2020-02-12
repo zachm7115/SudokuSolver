@@ -12,6 +12,9 @@ public class PuzzleParser {
             }
             System.out.println();
         }
+
+        Board sudokuBoard = new Board(puzz);
+        sudokuBoard.so
     }
  
  

@@ -124,4 +124,18 @@ public class Board {
         return coldefnums;
     }
 
+    public boolean solveDefs(){ //solves all squares with one solution
+
+        boolean solved = false;
+
+        for (int r = 0; r < squares.length; r++) {
+            for (int c = 0; c < squares.length; c++) {
+                if(squares[r][c].possibleNumbers.size() < 2)
+                    squares[r][c] = new Square(squares[r][c].possibleNumbers.get(0));
+            }
+        }
+
+        return solved;
+    }
+
 }
